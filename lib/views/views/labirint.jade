@@ -1,0 +1,32 @@
+extends ../layout.jade
+block content
+	.container
+		.jumbotron
+			.content
+				#unityPlayer
+					.missing
+						a(href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!")
+							img(alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63")
+block scripts
+		script(type="text/javascript" src="http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject.js")
+		script(type="text/javascript").
+			function GetUnity() {
+				if (typeof unityObject != "undefined") {
+					return unityObject.getObjectById("unityPlayer");
+				}
+				return null;
+			};
+			if (typeof unityObject != "undefined") {
+				unityObject.embedUnity("unityPlayer", "./app/labirint.unity3d", 960, 600);
+				
+			};
+		style(type="text/css").
+			div#unityPlayer {
+				cursor: default;
+				height: 600px;
+				width: 960px;
+			}
+			.jumbotron {
+				min-height: 600px;
+				min-width: 1100px !important;
+			}

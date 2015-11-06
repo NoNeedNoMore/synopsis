@@ -1,0 +1,10 @@
+extends ../layout.jade
+block content
+	.container
+		.jumbotron.img-rounded
+			pre.
+				Управление - срелочки или wasd, пауза - пробел
+				Левая кнопка мыши - поворот против часовой стрелки
+			#GameDiv
+block scripts
+	script(src="./js/snake.js")

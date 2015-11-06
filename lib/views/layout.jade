@@ -1,0 +1,14 @@
+doctype html
+html(lang="ru")
+	include ./includes/head.jade
+	body
+		#wrap
+			include ./includes/menu.jade
+			#main
+				block content
+		#footer
+			p.text-muted.text-center
+				#copyright &nbsp;© 2015 
+		script(src="/vendor/jquery-1.10.2.min.js")
+		script(src="/vendor/bootstrap-3.2.0/js/bootstrap.min.js")
+		block scripts
